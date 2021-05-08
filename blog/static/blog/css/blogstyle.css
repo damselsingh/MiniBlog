@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    color: bisque;
+}
+.nav-item > a, .navbar-brand{
+    font-weight: 900;
+}
+.nav-item > a:hover{
+    background-color:rgb(172, 172, 172);
+}
+.jumbo-color{
+    background-color: rgba(81, 82, 81);
+}
+.form-control{
+    background-color: rgba(177, 168, 168);
+}
+
+.footer{
+    font-family: 'Lemonada', cursive;;
+}
+
+.title{
+    font-family: 'Aclonica', sans-serif;
+}
+
+.main{
+    font-family: 'Quantico', sans-serif;
+}
+.lead{
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.arrow{
+    top: 85%;
+    left: 90%;
+    position: fixed;
+}

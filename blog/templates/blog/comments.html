@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}       
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 my-2">
+            {% if post.image %}
+            <img src="{{post.image.url}}" alt="" class="img-fluid">
+            {% else %}
+            <img src="/static/blog/images/default.png" alt="" class="img-fluid">
+            {% endif %}
+        </div>
+        <div class="col-md-8 my-2">
+            <h1 class="display-5 main my-2">{{post.title}}</h1>
+            <p class="lead my-2">{{post.description}}</p>
+            <div>
+                <h5 class="badge badge-info">post by: {{post.user}}</h5>
+                <p class="badge badge-info">{{post.date}}</p>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Comments <i class="fas fa-comment"></i></h2>
+    {% for comments in comm %}
+    <div class="alert alert-info">
+        <h5 class="badge badge-info">{{comments.date2}} </h5> <h5 class="badge badge-info">{{comments.user}}: </h5> {{comments.content}}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{cf.as_p}}
+        <input type="submit" class="btn btn-danger btn-sm" value="Comment">
+    </form>
+</div>
+
+
+{% endblock content %} 
